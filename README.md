@@ -1,4 +1,3 @@
-
 It provide utilities to work with the [tokio-postgres](https://github.com/sfackler/rust-postgres) crate, specifically through the use of `FromRow` and `TryFromRow` derive macros.
 These macros simplify the process of converting database rows into Rust structs.
 
@@ -23,3 +22,17 @@ struct User {
     name: String,
 }
 ```
+
+Expand into something like:
+
+```rust
+use tokio_postgres::Row;
+
+impl From<&Row> for User {
+    fn from(row: &Row) -> Self {
+        Self {
+            id: row.get("id"),
+            name: row.get("name"),
+        }
+    }
+}
