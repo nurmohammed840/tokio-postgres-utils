@@ -70,9 +70,9 @@ pub fn from_row(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
 
     let mut tokens = TokenStream::new();
     quote!(tokens, {
-        impl #impl_generics ::std::convert::From<&::tokio_postgres::Row> for #name #ty_generics #where_clause {
+        impl #impl_generics ::std::convert::From<&tokio_postgres::Row> for #name #ty_generics #where_clause {
             #[inline]
-            fn from(r: &::tokio_postgres::Row) -> Self {
+            fn from(r: &tokio_postgres::Row) -> Self {
                 Self #body
             }
         }
@@ -124,10 +124,10 @@ pub fn try_from_row(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
 
     let mut tokens = TokenStream::new();
     quote!(tokens, {
-        impl #impl_generics ::std::convert::TryFrom<&::tokio_postgres::Row> for #name #ty_generics #where_clause {
-            type Error = ::tokio_postgres::Error;
+        impl #impl_generics ::std::convert::TryFrom<&tokio_postgres::Row> for #name #ty_generics #where_clause {
+            type Error = tokio_postgres::Error;
             #[inline]
-            fn try_from(r: &::tokio_postgres::Row) -> ::std::result::Result<Self, Self::Error> {
+            fn try_from(r: &tokio_postgres::Row) -> ::std::result::Result<Self, Self::Error> {
                 Ok(Self #body)
             }
         }
