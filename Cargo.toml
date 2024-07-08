@@ -18,4 +18,4 @@ description = "Utilities to work with the `tokio-postgres` crate"
 tokio-postgres-macros = { path = "./tokio-postgres-macros", version = "0.2.0" }
 
 [dev-dependencies]
-tokio-postgres = "*"
+tokio-postgres = "0.7"
