@@ -15,7 +15,7 @@ repository = "https://github.com/nurmohammed840/tokio-postgres-utils"
 description = "Utilities to work with the `tokio-postgres` crate"
 
 [dependencies]
-tokio-postgres-macros = { path = "./tokio-postgres-macros", version = "0.1.1" }
+tokio-postgres-macros = { path = "./tokio-postgres-macros", version = "0.2.0" }
 
 [dev-dependencies]
 tokio-postgres = "*"
