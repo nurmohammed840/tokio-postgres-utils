@@ -5,7 +5,7 @@ members = [
 
 [package]
 name = "tokio-postgres-utils"
-version = "0.1.1"
+version = "0.2.0"
 edition = "2021"
 
 license = "MIT"
@@ -16,3 +16,6 @@ description = "Utilities to work with the `tokio-postgres` crate"
 
 [dependencies]
 tokio-postgres-macros = { path = "./tokio-postgres-macros", version = "0.1.1" }
+
+[dev-dependencies]
+tokio-postgres = "*"
