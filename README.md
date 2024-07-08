@@ -8,7 +8,7 @@ Add `tokio-postgres-utils` to your `Cargo.toml`:
 ```toml
 [dependencies]
 tokio-postgres = "0.7"
-tokio-postgres-utils = "0.1"
+tokio-postgres-utils = "0.2"
 ```
 
 ## Example
