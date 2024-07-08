@@ -72,7 +72,7 @@ will read the content of the column `description` into the field `about_me`.
 If you want to handle a field that implements FromRow, you can use the flatten attribute to specify that you want it to use FromRow for parsing rather than the usual method. For example:
 
 ```rust
-use tokio_postgres_utils::FromRow;
+use tokio_postgres_utils::{TryFromRow, FromRow};
 
 #[derive(FromRow)]
 struct Address {
@@ -81,7 +81,7 @@ struct Address {
     road: String,
 }
 
-#[derive(FromRow)]
+#[derive(TryFromRow)]
 struct User {
     id: i32,
     name: String,
